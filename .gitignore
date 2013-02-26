@@ -1,20 +1,22 @@
-# built application files
-*.apk
-*.ap_
+/*
 
-# files for the dex VM
-*.dex
+!.gitignore
+!README.md
+!LICENSE
 
-# Java class files
-*.class
+!library/
+library/*
+!library/src/
+!library/res/
+!library/libs/
+!library/AndroidManifest.xml
+!library/build.xml
+!library/project.properties
 
-# generated files
-bin/
-gen/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Eclipse project files
-.classpath
-.project
+!samples/
+samples/*
+!samples/src/
+!samples/res/
+!samples/AndroidManifest.xml
+!samples/build.xml
+!samples/project.properties
