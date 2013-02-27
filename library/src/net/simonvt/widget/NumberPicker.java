@@ -16,6 +16,8 @@
 
 package net.simonvt.widget;
 
+import java.util.Locale;
+
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
 import com.nineoldandroids.animation.AnimatorSet;
@@ -1855,8 +1857,8 @@ public class NumberPicker extends LinearLayout {
         } else {
             for (int i = 0; i < mDisplayedValues.length; i++) {
                 // Don't force the user to type in jan when ja will do
-                value = value.toLowerCase();
-                if (mDisplayedValues[i].toLowerCase().startsWith(value)) {
+                value = value.toLowerCase(Locale.getDefault());
+                if (mDisplayedValues[i].toLowerCase(Locale.getDefault()).startsWith(value)) {
                     return mMinValue + i;
                 }
             }
@@ -1956,9 +1958,9 @@ public class NumberPicker extends LinearLayout {
                 }
                 String result = String.valueOf(dest.subSequence(0, dstart)) + filtered
                         + dest.subSequence(dend, dest.length());
-                String str = String.valueOf(result).toLowerCase();
+                String str = String.valueOf(result).toLowerCase(Locale.getDefault());
                 for (String val : mDisplayedValues) {
-                    String valLowerCase = val.toLowerCase();
+                    String valLowerCase = val.toLowerCase(Locale.getDefault());
                     if (valLowerCase.startsWith(str)) {
                         postSetSelectionCommand(result.length(), val.length());
                         return val.subSequence(dstart, val.length());
